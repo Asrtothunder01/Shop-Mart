@@ -13,13 +13,15 @@ class BaseModel(models.Model):
         abstract = True
         
         
-class Category(BaseModel):
-    name  = models.CharField(max_length = 255)
+class Review (BaseModel):
     
-    description = models.TextField()
+    product = models.ForeignKey(Product,on_delete = models.CASCADE)
     
-    slug = models.SlugField(unique = True)
+    user = models.ForeignKey(CustomUser,on_delete = models.CASCADE)
+    
+    rating = models.PositiveIntegerField()
+    
+    comment = models.TextField(blank = True,null = True)
     
     def __str__(self):
-        return self.name
-    
+        return f"Review by {self.user.username} for {self.product.name}"

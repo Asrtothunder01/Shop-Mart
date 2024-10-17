@@ -10,3 +10,4 @@ class CustomUser(AbstractUser):
     is_admin = models.BooleanField(default = False)
     
     
+    
