@@ -9,7 +9,7 @@ class WishListAdmin(admin.ModelAdmin):
     
     list_display = ('user',)
     
-    search_display = ('user__username')
+    search_display = ('user__username',)
  
   
     
@@ -22,4 +22,4 @@ class WishListItemAdmin(admin.ModelAdmin):
     
     list_display = ('wishlist','product')
     
-    search_display  = ('wishlist__product')
+    search_display  = ('wishlist__product',)

@@ -14,7 +14,7 @@ from rest_framework import status
 
 
 @pytest.fixture
-def customUser_data():
+def customuser_data():
     return {'orde':'New order'}
     
 def test_customuser_list_view(api_client):
